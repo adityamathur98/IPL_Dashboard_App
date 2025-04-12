@@ -33,7 +33,9 @@ const TeamMatches = () => {
 
   async function getTeamMatches() {
     try {
-      const response = await axios.get(`http://localhost:3000/ipl/${id}`);
+      const response = await axios.get(
+        `${import.meta.env.VITE_FRONTEND_URL}/ipl/${id}`
+      );
       const data = response.data;
       const formattedData = {
         teamBannerUrl: data.team_banner_url,

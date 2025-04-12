@@ -15,7 +15,9 @@ const HomePage = () => {
 
   const fetchIplTeamData = async () => {
     try {
-      const response = await axios.get("http://localhost:3000/ipl");
+      const response = await axios.get(
+        `${import.meta.env.VITE_FRONTEND_URL}/ipl`
+      );
       const data = response.data;
       const updatedData = data.map((eachItem) => ({
         id: eachItem.id,
